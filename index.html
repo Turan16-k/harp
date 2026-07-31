@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Historical War Engine & Tactical Simulator</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app-container">
+    <!-- Header Bar -->
+    <header class="tactical-header">
+      <div class="brand-title">
+        <span>ANTIGRAVITY</span> HISTORICAL WAR ENGINE <span class="badge">v4.2 AI</span>
+      </div>
+
+      <div class="header-status">
+        <div class="header-status-item">
+          <div class="status-dot"></div>
+          <span>EPOCH: 1071 CE (BATTLE OF MANZIKERT)</span>
+        </div>
+        <div class="header-status-item">
+          <span>LAT/LNG: 39.1436° N, 42.5442° E</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar Left: Military Unit & Commander Drawer -->
+    <aside id="sidebar-left" class="sidebar-panel">
+      <div class="panel-section">
+        <div class="panel-title">
+          <span>UNIT DETAILS & STATS</span>
+          <span style="font-size: 0.7rem; color: var(--accent-emerald);">[CLICK MARKER]</span>
+        </div>
+        <div id="unit-details-card">
+          <p style="font-size: 0.82rem; color: var(--text-muted);">Select any military unit marker on the map to inspect commander stats, morale, and coordinates.</p>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">
+          <span>TERRAIN & WEATHER</span>
+        </div>
+        <div class="stat-row">
+          <span>WEATHER:</span>
+          <span>Sunny, Dry Winds</span>
+        </div>
+        <div class="stat-row">
+          <span>TERRAIN:</span>
+          <span>Steppe / Rolling Hills</span>
+        </div>
+        <div class="stat-row">
+          <span>CAVALRY SPEED:</span>
+          <span style="color: var(--accent-emerald);">+25% Bonus</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Map Viewport -->
+    <main id="map-viewport"></main>
+
+    <!-- Sidebar Right: AI Storytelling & Tactical Command Engine -->
+    <aside id="sidebar-right" class="sidebar-panel">
+      <div class="panel-section">
+        <div class="panel-title">
+          <span>AI NARRATOR SUBTITLES</span>
+        </div>
+        <div id="ai-narration-box" class="ai-narration-box">
+          Ready to play battle timeline. Click Play on the timeline controller below or trigger custom tactical maneuvers.
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-title">
+          <span>TACTICAL FORMATION ENGINE</span>
+        </div>
+        <div class="tactical-btn-group">
+          <button id="btn-turan-tactic" class="btn-tactical danger">
+            <span>⚡ TURAN TACTIC (FEIGNED RETREAT)</span>
+          </button>
+          <button id="btn-wedge-formation" class="btn-tactical">
+            <span>▲ WEDGE SPEARHEAD FORMATION</span>
+          </button>
+          <button id="btn-siege-orbit" class="btn-tactical">
+            <span>⟳ ROTATIONAL SIEGE ORBIT</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Bottom Timeline Controller -->
+    <footer class="timeline-bar">
+      <div class="playback-controls">
+        <button id="play-btn" class="control-btn play-btn" title="Play / Pause Timeline">▶</button>
+        <button id="reset-btn" class="control-btn" onclick="window.app.syncPlayer.stop()" title="Reset Timeline">⏹</button>
+      </div>
+
+      <div class="timeline-scrubber">
+        <div class="scrubber-timer">
+          <span>TIMELINE SCRUBBER</span>
+          <span id="time-display">00:00 / 00:35</span>
+        </div>
+        <input type="range" id="timeline-slider" class="slider-input" min="0" max="35" value="0" step="0.1">
+      </div>
+
+      <div style="text-align: right; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan);">
+        SYSTEM STATUS: ONLINE<br>
+        SYNC ENGINE: ACTIVE
+      </div>
+    </footer>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- ES6 Main Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

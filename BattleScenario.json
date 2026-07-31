@@ -1,0 +1,282 @@
+{
+  "$schema": "https://raw.githubusercontent.com/war-engine/schemas/v1/BattleScenario.schema.json",
+  "metadata": {
+    "id": "scenario_malazgirt_1071",
+    "title": "The Battle of Manzikert (Malazgirt)",
+    "epoch": "1071 CE (Medieval Middle East)",
+    "date": "1071-08-26",
+    "region": "Eastern Anatolia, Byzantine Empire / Seljuk Empire",
+    "description": "Tactical breakthrough of the Seljuk army using the Turan Tactic (Feigned Retreat) against the heavy Byzantine army under Emperor Romanos IV Diogenes.",
+    "centerCoordinates": [39.1436, 42.5442],
+    "defaultZoom": 11,
+    "author": "Historical AI Engine v4.2"
+  },
+  "terrainAndWeather": {
+    "weather": "Sunny, Dry Winds",
+    "temperatureCelsius": 28,
+    "visibilityKm": 15,
+    "terrainType": "Steppe / Rolling Hills",
+    "tacticalModifiers": {
+      "cavalrySpeedBonus": 1.25,
+      "heavyInfantryFatigueRate": 1.4,
+      "archeryRangeModifier": 1.10
+    }
+  },
+  "historicalBoundaries": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "faction": "Seljuk Empire",
+          "fill": "#00ff88",
+          "fillOpacity": 0.15,
+          "stroke": "#00ff88",
+          "strokeWidth": 2
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[
+            [42.35, 39.05],
+            [42.70, 39.05],
+            [42.75, 39.25],
+            [42.30, 39.25],
+            [42.35, 39.05]
+          ]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "faction": "Byzantine Empire",
+          "fill": "#ff3366",
+          "fillOpacity": 0.15,
+          "stroke": "#ff3366",
+          "strokeWidth": 2
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[
+            [42.45, 39.15],
+            [42.85, 39.10],
+            [42.90, 39.35],
+            [42.50, 39.35],
+            [42.45, 39.15]
+          ]]
+        }
+      }
+    ]
+  },
+  "units": [
+    {
+      "id": "seljuk_center_vanguard",
+      "name": "Seljuk Horse Archers (Center)",
+      "faction": "Seljuk Empire",
+      "type": "Cavalry",
+      "subType": "Light Horse Archers",
+      "lat": 39.1450,
+      "lng": 42.5200,
+      "heading": 90,
+      "strength": 8000,
+      "maxStrength": 8000,
+      "morale": 95,
+      "stamina": 100,
+      "commander": {
+        "name": "Sultan Alp Arslan",
+        "rank": "Supreme Commander",
+        "tacticalSkill": 98,
+        "avatarSvg": "crown"
+      },
+      "stats": {
+        "speed": 45,
+        "attack": 75,
+        "defense": 40,
+        "range": 180
+      },
+      "customSvgIcon": "cavalry_archer"
+    },
+    {
+      "id": "seljuk_left_flank",
+      "name": "Seljuk Left Wing (Steppe Cavalry)",
+      "faction": "Seljuk Empire",
+      "type": "Cavalry",
+      "subType": "Heavy Light Mixed Cavalry",
+      "lat": 39.1750,
+      "lng": 42.4900,
+      "heading": 110,
+      "strength": 10000,
+      "maxStrength": 10000,
+      "morale": 90,
+      "stamina": 95,
+      "commander": {
+        "name": "Emir Artuk Bey",
+        "rank": "Flank General",
+        "tacticalSkill": 92
+      },
+      "stats": {
+        "speed": 40,
+        "attack": 82,
+        "defense": 55,
+        "range": 120
+      },
+      "customSvgIcon": "cavalry"
+    },
+    {
+      "id": "seljuk_right_flank",
+      "name": "Seljuk Right Wing (Turcoman Cavalry)",
+      "faction": "Seljuk Empire",
+      "type": "Cavalry",
+      "subType": "Mounted Archers",
+      "lat": 39.1150,
+      "lng": 42.4900,
+      "heading": 70,
+      "strength": 10000,
+      "maxStrength": 10000,
+      "morale": 92,
+      "stamina": 95,
+      "commander": {
+        "name": "Emir Danishmend",
+        "rank": "Flank General",
+        "tacticalSkill": 90
+      },
+      "stats": {
+        "speed": 42,
+        "attack": 80,
+        "defense": 50,
+        "range": 150
+      },
+      "customSvgIcon": "cavalry"
+    },
+    {
+      "id": "byzantine_vanguard",
+      "name": "Imperial Tagmata & Norman Mercenaries",
+      "faction": "Byzantine Empire",
+      "type": "Infantry",
+      "subType": "Heavy Spearmen & Cataphracts",
+      "lat": 39.1450,
+      "lng": 42.5600,
+      "heading": 270,
+      "strength": 18000,
+      "maxStrength": 20000,
+      "morale": 80,
+      "stamina": 85,
+      "commander": {
+        "name": "Emperor Romanos IV Diogenes",
+        "rank": "Autokrator",
+        "tacticalSkill": 78
+      },
+      "stats": {
+        "speed": 20,
+        "attack": 88,
+        "defense": 85,
+        "range": 20
+      },
+      "customSvgIcon": "heavy_infantry"
+    },
+    {
+      "id": "byzantine_rear_guard",
+      "name": "Byzantine Reserve Corps",
+      "faction": "Byzantine Empire",
+      "type": "Infantry",
+      "subType": "Feudal Levy",
+      "lat": 39.1450,
+      "lng": 42.6100,
+      "heading": 270,
+      "strength": 12000,
+      "maxStrength": 15000,
+      "morale": 60,
+      "stamina": 75,
+      "commander": {
+        "name": "Andronikos Doukas",
+        "rank": "Reserve General",
+        "tacticalSkill": 55
+      },
+      "stats": {
+        "speed": 18,
+        "attack": 65,
+        "defense": 60,
+        "range": 10
+      },
+      "customSvgIcon": "infantry"
+    }
+  ],
+  "timelineEvents": [
+    {
+      "timestamp": 0,
+      "duration": 5,
+      "narrationText": "August 26, 1071. On the plains near Manzikert, Emperor Romanos IV advances his formidable heavy infantry vanguard towards the Seljuk lines.",
+      "camera": {
+        "center": [39.1450, 42.5350],
+        "zoom": 12,
+        "duration": 3
+      },
+      "commands": [
+        {
+          "type": "FORM_LINE",
+          "unitId": "byzantine_vanguard",
+          "params": { "spacingMeters": 40 }
+        }
+      ]
+    },
+    {
+      "timestamp": 5,
+      "duration": 8,
+      "narrationText": "Sultan Alp Arslan orders the vanguard horse archers to engage with swift arrow volleys, enticing Romanos IV into a deep frontal pursuit.",
+      "camera": {
+        "center": [39.1450, 42.5300],
+        "zoom": 13,
+        "duration": 4
+      },
+      "commands": [
+        {
+          "type": "RAID_STRIKE",
+          "unitId": "seljuk_center_vanguard",
+          "targetUnitId": "byzantine_vanguard",
+          "params": { "strikeDistanceMeters": 350, "retreatDistanceMeters": 700 }
+        }
+      ]
+    },
+    {
+      "timestamp": 13,
+      "duration": 12,
+      "narrationText": "EXECUTION OF TURAN TACTIC: The Seljuk center feigns panic and retreats towards the hills. Romanos IV advances his troops out of formation into the trap corridor!",
+      "camera": {
+        "center": [39.1450, 42.5100],
+        "zoom": 12,
+        "duration": 5
+      },
+      "commands": [
+        {
+          "type": "FEIGNED_RETREAT",
+          "centerUnitId": "seljuk_center_vanguard",
+          "leftFlankId": "seljuk_left_flank",
+          "rightFlankId": "seljuk_right_flank",
+          "enemyUnitId": "byzantine_vanguard",
+          "params": {
+            "lureDistanceMeters": 2500,
+            "baitAdvanceDistanceMeters": 2000,
+            "encircleRadiusMeters": 1200
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 25,
+      "duration": 10,
+      "narrationText": "THE CRESCENT CLOSES! As dusk approaches, the Seljuk flanks envelop the Byzantine vanguard from both sides, cutting off their line of retreat while Doukas's reserve flees.",
+      "camera": {
+        "center": [39.1450, 42.5050],
+        "zoom": 13,
+        "duration": 4
+      },
+      "commands": [
+        {
+          "type": "SIEGE_ORBIT",
+          "unitIds": ["seljuk_left_flank", "seljuk_right_flank", "seljuk_center_vanguard"],
+          "targetCoordinates": [39.1450, 42.5050],
+          "params": { "radiusMeters": 900, "durationSeconds": 8 }
+        }
+      ]
+    }
+  ]
+}
